@@ -15,6 +15,10 @@
 		1C32A69A2240DF4E003C1C02 /* ServerData.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C32A6992240DF4E003C1C02 /* ServerData.json */; };
 		1C32A69C2240DF6C003C1C02 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C32A69B2240DF6C003C1C02 /* Profile.swift */; };
 		1CFE2DC52240E9F3008BA1B8 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE2DC42240E9F3008BA1B8 /* ProfileViewModel.swift */; };
+		1CFE2DC92240F645008BA1B8 /* NamePictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE2DC72240F645008BA1B8 /* NamePictureCell.swift */; };
+		1CFE2DCA2240F645008BA1B8 /* NamePictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CFE2DC82240F645008BA1B8 /* NamePictureCell.xib */; };
+		1CFE2DCD2240F819008BA1B8 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFE2DCB2240F819008BA1B8 /* FriendCell.swift */; };
+		1CFE2DCE2240F819008BA1B8 /* FriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CFE2DCC2240F819008BA1B8 /* FriendCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		1C32A6992240DF4E003C1C02 /* ServerData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ServerData.json; sourceTree = "<group>"; };
 		1C32A69B2240DF6C003C1C02 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		1CFE2DC42240E9F3008BA1B8 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		1CFE2DC72240F645008BA1B8 /* NamePictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamePictureCell.swift; sourceTree = "<group>"; };
+		1CFE2DC82240F645008BA1B8 /* NamePictureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NamePictureCell.xib; sourceTree = "<group>"; };
+		1CFE2DCB2240F819008BA1B8 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		1CFE2DCC2240F819008BA1B8 /* FriendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,7 @@
 		1C32A6862240DE99003C1C02 /* TableViewWithMultipleCellTypes */ = {
 			isa = PBXGroup;
 			children = (
+				1CFE2DC62240F61B008BA1B8 /* TableViewCells */,
 				1C32A6992240DF4E003C1C02 /* ServerData.json */,
 				1C32A6872240DE99003C1C02 /* AppDelegate.swift */,
 				1C32A6892240DE99003C1C02 /* ViewController.swift */,
@@ -71,6 +80,17 @@
 				1CFE2DC42240E9F3008BA1B8 /* ProfileViewModel.swift */,
 			);
 			path = TableViewWithMultipleCellTypes;
+			sourceTree = "<group>";
+		};
+		1CFE2DC62240F61B008BA1B8 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				1CFE2DC72240F645008BA1B8 /* NamePictureCell.swift */,
+				1CFE2DC82240F645008BA1B8 /* NamePictureCell.xib */,
+				1CFE2DCB2240F819008BA1B8 /* FriendCell.swift */,
+				1CFE2DCC2240F819008BA1B8 /* FriendCell.xib */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +151,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CFE2DCA2240F645008BA1B8 /* NamePictureCell.xib in Resources */,
+				1CFE2DCE2240F819008BA1B8 /* FriendCell.xib in Resources */,
 				1C32A69A2240DF4E003C1C02 /* ServerData.json in Resources */,
 				1C32A6922240DE9B003C1C02 /* LaunchScreen.storyboard in Resources */,
 				1C32A68F2240DE9B003C1C02 /* Assets.xcassets in Resources */,
@@ -146,8 +168,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C32A68A2240DE99003C1C02 /* ViewController.swift in Sources */,
+				1CFE2DCD2240F819008BA1B8 /* FriendCell.swift in Sources */,
 				1C32A69C2240DF6C003C1C02 /* Profile.swift in Sources */,
 				1CFE2DC52240E9F3008BA1B8 /* ProfileViewModel.swift in Sources */,
+				1CFE2DC92240F645008BA1B8 /* NamePictureCell.swift in Sources */,
 				1C32A6882240DE99003C1C02 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
