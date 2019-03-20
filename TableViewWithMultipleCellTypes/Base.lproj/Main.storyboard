@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MVVM Demo-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TableViewWithMultipleCellTypes" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,7 +32,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ukp-CY-g59"/>
+                    <navigationItem key="navigationItem" title="MVVM Demo" id="ukp-CY-g59"/>
                     <connections>
                         <outlet property="tableView" destination="wYg-io-55L" id="aQG-cK-wIp"/>
                     </connections>

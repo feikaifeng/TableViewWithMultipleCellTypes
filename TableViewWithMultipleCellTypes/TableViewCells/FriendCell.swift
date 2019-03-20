@@ -8,10 +8,14 @@
 
 import UIKit
 
+typealias FriendCallback = (() -> Void )
+
 class FriendCell: UITableViewCell {
     
     @IBOutlet weak var pictureImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    
+    var friendCallback: FriendCallback?
     
     var item: Friend? {
         didSet {
@@ -32,6 +36,10 @@ class FriendCell: UITableViewCell {
         return String(describing: self)
     }
     
+    @objc func selectFriend() {
+        friendCallback?()
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -39,6 +47,8 @@ class FriendCell: UITableViewCell {
         pictureImageView?.clipsToBounds = true
         pictureImageView?.contentMode = .scaleAspectFit
         pictureImageView?.backgroundColor = UIColor.lightGray
+        
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectFriend)))
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -208,6 +208,10 @@ extension ProfileViewModel: UITableViewDataSource {
         case .friend:
             if let item = item as? ProfileViewModelFriendsItem, let cell = tableView.dequeueReusableCell(withIdentifier: FriendCell.identifier, for: indexPath) as? FriendCell {
                 cell.item = item.friends[indexPath.row]
+                
+                cell.friendCallback = {
+                    print("selected friend: \(item.friends[indexPath.row].name ?? "no value")")
+                }
                 return cell
             }
         case .attribute:
@@ -229,6 +233,19 @@ extension ProfileViewModel: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        print(dump(items[indexPath.row]))
+        let item = items[indexPath.section]
+        print(dump(item))
+        switch item.type {
+        case .nameAndPicture:
+            break
+        case .about:
+            break
+        case .email:
+            break
+        case .friend:
+            break
+        case .attribute:
+            break
+        }
     }
 }
