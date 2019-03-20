@@ -1,24 +1,21 @@
 //
-//  NamePictureCell.swift
+//  EmailCell.swift
 //  TableViewWithMultipleCellTypes
 //
-//  Created by 费凯峰 on 2019/3/19.
+//  Created by 费凯峰 on 2019/3/20.
 //  Copyright © 2019 费凯峰. All rights reserved.
 //
 
 import UIKit
 
-class NamePictureCell: UITableViewCell {
+class EmailCell: UITableViewCell {
     
-    @IBOutlet weak var pictureImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
     
     var item: ProfileViewModelItem? {
         didSet {
-            guard let item = item as? ProfileViewModelNameAndPictureItem else { return }
-            
-            nameLabel.text = item.userName
-            pictureImageView.image = UIImage(named: item.pictureUrl)
+            guard let item = item as? ProfileViewModelEmailItem else { return }
+            emailLabel.text = item.email
         }
     }
     
@@ -33,10 +30,6 @@ class NamePictureCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        pictureImageView?.layer.cornerRadius = pictureImageView.frame.width/2.0
-        pictureImageView?.clipsToBounds = true
-        pictureImageView?.contentMode = .scaleAspectFit
-        pictureImageView?.backgroundColor = UIColor.lightGray
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

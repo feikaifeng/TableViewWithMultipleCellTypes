@@ -8,6 +8,15 @@
 
 import UIKit
 
+public func dataFromFile(_ filename: String) -> Data? {
+    @objc class TestClass: NSObject { }
+    let bundle = Bundle(for: TestClass.self)
+    if let path = bundle.path(forResource: filename, ofType: "json") {
+        return (try? Data(contentsOf: URL(fileURLWithPath: path)))
+    }
+    return nil
+}
+
 enum ProfileViewModelItemType {
     case nameAndPicture
     case about
@@ -186,12 +195,40 @@ extension ProfileViewModel: UITableViewDataSource {
                 cell.item = item
                 return cell
             }
-        default:
-            break
+        case .about:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: AboutCell.identifier, for: indexPath) as? AboutCell {
+                cell.item = item
+                return cell
+            }
+        case .email:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: EmailCell.identifier, for: indexPath) as? EmailCell {
+                cell.item = item
+                return cell
+            }
+        case .friend:
+            if let item = item as? ProfileViewModelFriendsItem, let cell = tableView.dequeueReusableCell(withIdentifier: FriendCell.identifier, for: indexPath) as? FriendCell {
+                cell.item = item.friends[indexPath.row]
+                return cell
+            }
+        case .attribute:
+            if let item = item as? ProfileViewModelAttributeItem, let cell = tableView.dequeueReusableCell(withIdentifier: AttributeCell.identifier, for: indexPath) as? AttributeCell {
+                cell.item = item.attributes[indexPath.row]
+                return cell
+            }
         }
         
         return UITableViewCell()
     }
     
-    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return items[section].sectionTitle
+    }
+}
+
+extension ProfileViewModel: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        print(dump(items[indexPath.row]))
+    }
 }
