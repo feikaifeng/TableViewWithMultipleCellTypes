@@ -43,10 +43,10 @@ class FriendCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        pictureImageView?.layer.cornerRadius = pictureImageView.frame.width/2.0
-        pictureImageView?.clipsToBounds = true
-        pictureImageView?.contentMode = .scaleAspectFit
-        pictureImageView?.backgroundColor = UIColor.lightGray
+        pictureImageView.layer.cornerRadius = pictureImageView.frame.width/2.0
+        pictureImageView.clipsToBounds = true
+        pictureImageView.contentMode = .scaleAspectFit
+        pictureImageView.backgroundColor = UIColor.lightGray
         
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(selectFriend)))
     }

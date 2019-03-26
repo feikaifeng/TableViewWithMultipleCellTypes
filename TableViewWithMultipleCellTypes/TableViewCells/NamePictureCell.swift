@@ -33,10 +33,10 @@ class NamePictureCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        pictureImageView?.layer.cornerRadius = pictureImageView.frame.width/2.0
-        pictureImageView?.clipsToBounds = true
-        pictureImageView?.contentMode = .scaleAspectFit
-        pictureImageView?.backgroundColor = UIColor.lightGray
+        pictureImageView.layer.cornerRadius = pictureImageView.frame.width/2.0
+        pictureImageView.clipsToBounds = true
+        pictureImageView.contentMode = .scaleAspectFit
+        pictureImageView.backgroundColor = UIColor.lightGray
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
