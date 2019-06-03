@@ -8,7 +8,7 @@
 
 import UIKit
 
-typealias FriendCallback = (() -> Void )
+typealias FriendCallback = (() -> Void)
 
 class FriendCell: UITableViewCell {
     
